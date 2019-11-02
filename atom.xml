@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Dovis</title>
+  
+  <subtitle>Eddie-Fannie</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://eddie-fannie.github.io/"/>
+  <updated>2019-11-02T11:03:41.926Z</updated>
+  <id>https://eddie-fannie.github.io/</id>
+  
+  <author>
+    <name>Dovis</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试页面</title>
+    <link href="https://eddie-fannie.github.io/2019/11/03/text/"/>
+    <id>https://eddie-fannie.github.io/2019/11/03/text/</id>
+    <published>2019-11-02T19:03:41.000Z</published>
+    <updated>2019-11-02T11:03:41.926Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+       
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://eddie-fannie.github.io/2019/11/02/hello-world/"/>
+    <id>https://eddie-fannie.github.io/2019/11/02/hello-world/</id>
+    <published>2019-11-02T10:33:34.851Z</published>
+    <updated>2019-11-02T10:33:34.851Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>
