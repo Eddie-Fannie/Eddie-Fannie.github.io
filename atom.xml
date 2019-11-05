@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://eddie-fannie.github.io/"/>
-  <updated>2019-11-03T15:22:34.075Z</updated>
+  <updated>2019-11-05T16:08:15.002Z</updated>
   <id>https://eddie-fannie.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>测试页面</title>
-    <link href="https://eddie-fannie.github.io/2019/11/03/text/"/>
-    <id>https://eddie-fannie.github.io/2019/11/03/text/</id>
-    <published>2019-11-02T19:03:41.000Z</published>
-    <updated>2019-11-03T15:22:34.075Z</updated>
+    <title>原型&amp;原型链</title>
+    <link href="https://eddie-fannie.github.io/2019/11/06/yuanxing/"/>
+    <id>https://eddie-fannie.github.io/2019/11/06/yuanxing/</id>
+    <published>2019-11-06T00:03:23.000Z</published>
+    <updated>2019-11-05T16:08:15.002Z</updated>
     
     <summary type="html">
     
@@ -29,19 +29,17 @@
       
         
         
-          &lt;h3 id=&quot;测试一下&quot;&gt;&lt;a href=&quot;#测试一下&quot; class=&quot;headerlink&quot; title=&quot;测试一下&quot;&gt;&lt;/a&gt;测试一下&lt;/h3&gt;&lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-    
+          &lt;h3 id=&quot;原型与原型链&quot;&gt;&lt;a href=&quot;#原型与原型链&quot; class=&quot;headerlink&quot; title=&quot;原型与原型链&quot;&gt;&lt;/a&gt;原型与原型链&lt;/h3&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot;
         
       
     
     </summary>
     
     
-      <category term="测试案例" scheme="https://eddie-fannie.github.io/categories/%E6%B5%8B%E8%AF%95%E6%A1%88%E4%BE%8B/"/>
+      <category term="-原型" scheme="https://eddie-fannie.github.io/categories/%E5%8E%9F%E5%9E%8B/"/>
     
     
-      <category term="测试" scheme="https://eddie-fannie.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
+      <category term="-原型 -js" scheme="https://eddie-fannie.github.io/tags/%E5%8E%9F%E5%9E%8B-js/"/>
     
   </entry>
   
