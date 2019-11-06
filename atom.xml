@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://eddie-fannie.github.io/"/>
-  <updated>2019-11-06T13:00:16.043Z</updated>
+  <updated>2019-11-06T15:48:27.030Z</updated>
   <id>https://eddie-fannie.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>markdown编辑规范</title>
+    <link href="https://eddie-fannie.github.io/2019/11/07/markdown-bian-ji-gui-fan/"/>
+    <id>https://eddie-fannie.github.io/2019/11/07/markdown-bian-ji-gui-fan/</id>
+    <published>2019-11-06T22:09:06.000Z</published>
+    <updated>2019-11-06T15:48:27.030Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Markdown-是一种轻量级的标记语言&quot;&gt;&lt;a href=&quot;#Markdown-是一种轻量级的标记语言&quot; class=&quot;headerlink&quot; title=&quot;Markdown 是一种轻量级的标记语言&quot;&gt;&lt;/a&gt;Markdown
+        
+      
+    
+    </summary>
+    
+    
+      <category term="markdown" scheme="https://eddie-fannie.github.io/categories/markdown/"/>
+    
+    
+      <category term="markdown" scheme="https://eddie-fannie.github.io/tags/markdown/"/>
+    
+  </entry>
   
   <entry>
     <title>原型&amp;原型链</title>
