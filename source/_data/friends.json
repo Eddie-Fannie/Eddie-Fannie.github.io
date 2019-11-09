@@ -1,0 +1,38 @@
+[{
+  "avatar": "http://es6.ruanyifeng.com/images/cover_thumbnail_3rd.jpg",
+  "name": "ES6入门",
+  "introduction": "《ECMAScript 6 入门》是一本开源的 JavaScript 语言教程，全面介绍 ECMAScript 6 新引入的语法特性。",
+  "url": "http://es6.ruanyifeng.com//",
+  "title": "前去学习"
+}, {
+  "avatar": "https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/spaces%2F-LePcpqlRFfRLj_MbgfU%2Favatar.png?generation=1557373949616120&alt=media",
+  "name": "TS入门教程",
+  "introduction": "从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript",
+  "url": "https://ts.xcatliu.com/",
+  "title": "前去学习"
+}, {
+  "avatar": "https://cn.vuejs.org/images/logo.png",
+  "name": "Vue.js",
+  "introduction": "渐进式JavaScript 框架",
+  "url": "https://cn.vuejs.org/",
+  "title": "前去学习"
+},{
+  "avatar": "https://cn.vuejs.org/images/logo.png",
+  "name": "Vuex",
+  "introduction": "Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式",
+  "url": "https://vuex.vuejs.org/zh/",
+  "title": "前去学习"
+},{
+  "avatar": "https://cn.vuejs.org/images/logo.png",
+  "name": "Vue Router",
+  "introduction": "Vue Router 是 Vue.js 官方的路由管理器",
+  "url": "https://router.vuejs.org/zh/",
+  "title": "前去学习"
+},{
+  "avatar": "https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg",
+  "name": "Hexo",
+  "introduction": "Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。",
+  "url": "https://hexo.io/zh-cn/docs/",
+  "title": "前去学习"
+}
+]
