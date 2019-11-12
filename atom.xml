@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://eddie-fannie.github.io/"/>
-  <updated>2019-11-12T08:21:32.051Z</updated>
+  <updated>2019-11-12T11:18:50.747Z</updated>
   <id>https://eddie-fannie.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://eddie-fannie.github.io/2019/11/13/gao-xing-neng-xuan-ran-shi-wan-ji-shu-ju/"/>
     <id>https://eddie-fannie.github.io/2019/11/13/gao-xing-neng-xuan-ran-shi-wan-ji-shu-ju/</id>
     <published>2019-11-12T16:21:32.000Z</published>
-    <updated>2019-11-12T08:21:32.051Z</updated>
+    <updated>2019-11-12T11:18:50.747Z</updated>
     
     <summary type="html">
     
@@ -36,6 +36,14 @@
     </summary>
     
     
+      <category term="前端进阶" scheme="https://eddie-fannie.github.io/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"/>
+    
+    
+      <category term="时间分片" scheme="https://eddie-fannie.github.io/tags/%E6%97%B6%E9%97%B4%E5%88%86%E7%89%87/"/>
+    
+      <category term="虚拟列表" scheme="https://eddie-fannie.github.io/tags/%E8%99%9A%E6%8B%9F%E5%88%97%E8%A1%A8/"/>
+    
+      <category term="超高数量级数据量" scheme="https://eddie-fannie.github.io/tags/%E8%B6%85%E9%AB%98%E6%95%B0%E9%87%8F%E7%BA%A7%E6%95%B0%E6%8D%AE%E9%87%8F/"/>
     
   </entry>
   
