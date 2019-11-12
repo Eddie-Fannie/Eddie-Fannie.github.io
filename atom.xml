@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Dovis</title>
+  
+  <subtitle>Eddie-Fannie</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://eddie-fannie.github.io/"/>
+  <updated>2019-11-12T08:00:12.616Z</updated>
+  <id>https://eddie-fannie.github.io/</id>
+  
+  <author>
+    <name>Dovis</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://eddie-fannie.github.io/2019/11/12/hello-world/"/>
+    <id>https://eddie-fannie.github.io/2019/11/12/hello-world/</id>
+    <published>2019-11-12T08:00:12.616Z</published>
+    <updated>2019-11-12T08:00:12.616Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>markdown编辑规范</title>
+    <link href="https://eddie-fannie.github.io/2019/11/07/markdown-bian-ji-gui-fan/"/>
+    <id>https://eddie-fannie.github.io/2019/11/07/markdown-bian-ji-gui-fan/</id>
+    <published>2019-11-06T22:09:06.000Z</published>
+    <updated>2019-11-12T08:00:12.616Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="markdown" scheme="https://eddie-fannie.github.io/categories/markdown/"/>
+    
+    
+      <category term="markdown" scheme="https://eddie-fannie.github.io/tags/markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>原型&amp;原型链</title>
+    <link href="https://eddie-fannie.github.io/2019/11/06/yuanxing/"/>
+    <id>https://eddie-fannie.github.io/2019/11/06/yuanxing/</id>
+    <published>2019-11-06T00:03:23.000Z</published>
+    <updated>2019-11-12T08:00:12.616Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="原型" scheme="https://eddie-fannie.github.io/categories/%E5%8E%9F%E5%9E%8B/"/>
+    
+    
+      <category term="原型" scheme="https://eddie-fannie.github.io/tags/%E5%8E%9F%E5%9E%8B/"/>
+    
+      <category term="js" scheme="https://eddie-fannie.github.io/tags/js/"/>
+    
+      <category term="原型链" scheme="https://eddie-fannie.github.io/tags/%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
+    
+  </entry>
+  
+</feed>
