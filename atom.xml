@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://eddie-fannie.github.io/"/>
-  <updated>2019-11-12T11:18:50.747Z</updated>
+  <updated>2019-11-14T11:46:22.596Z</updated>
   <id>https://eddie-fannie.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://eddie-fannie.github.io/2019/11/13/gao-xing-neng-xuan-ran-shi-wan-ji-shu-ju/"/>
     <id>https://eddie-fannie.github.io/2019/11/13/gao-xing-neng-xuan-ran-shi-wan-ji-shu-ju/</id>
     <published>2019-11-12T16:21:32.000Z</published>
-    <updated>2019-11-12T11:18:50.747Z</updated>
+    <updated>2019-11-14T11:46:22.596Z</updated>
     
     <summary type="html">
     
@@ -71,11 +71,42 @@
   </entry>
   
   <entry>
+    <title>详谈Javascript的Event loop</title>
+    <link href="https://eddie-fannie.github.io/2019/11/10/xiang-tan-javascript-de-event-loop/"/>
+    <id>https://eddie-fannie.github.io/2019/11/10/xiang-tan-javascript-de-event-loop/</id>
+    <published>2019-11-09T20:36:41.000Z</published>
+    <updated>2019-11-14T10:59:14.981Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="前端进阶" scheme="https://eddie-fannie.github.io/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"/>
+    
+    
+      <category term="Event loop" scheme="https://eddie-fannie.github.io/tags/Event-loop/"/>
+    
+      <category term="线程" scheme="https://eddie-fannie.github.io/tags/%E7%BA%BF%E7%A8%8B/"/>
+    
+      <category term="进程" scheme="https://eddie-fannie.github.io/tags/%E8%BF%9B%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>markdown编辑规范</title>
     <link href="https://eddie-fannie.github.io/2019/11/07/markdown-bian-ji-gui-fan/"/>
     <id>https://eddie-fannie.github.io/2019/11/07/markdown-bian-ji-gui-fan/</id>
     <published>2019-11-06T22:09:06.000Z</published>
-    <updated>2019-11-12T08:00:12.616Z</updated>
+    <updated>2019-11-14T10:59:14.981Z</updated>
     
     <summary type="html">
     

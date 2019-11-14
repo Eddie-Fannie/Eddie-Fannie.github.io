@@ -408,14 +408,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    453
+                    610
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 				
@@ -466,6 +466,33 @@
 </ul>
 <p>可以得出的结论：对于大量数据渲染的时候，JS运算并不是性能的瓶颈，性能的瓶颈主要在于渲染阶段</p>
 <p><strong>关于Event Loop更多知识点可以参考：<a href=""></a></strong></p>
+<h3 id="使用定时器"><a href="#使用定时器" class="headerlink" title="使用定时器"></a>使用定时器</h3><p>从上面简单粗暴的例子可以看出页面的渲染耗时长是由于同时渲染大量DOM所引起的，所以我们考虑将渲染过程分批进行</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">let</span> ul <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'container'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// 插入十万条数据</span>
+<span class="token keyword">let</span> total <span class="token operator">=</span> <span class="token number">100000</span>
+<span class="token comment" spellcheck="true">//一次插入20条</span>
+<span class="token keyword">let</span> once <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//总页数</span>
+<span class="token keyword">let</span> page <span class="token operator">=</span> total<span class="token operator">/</span>once
+<span class="token comment" spellcheck="true">//每条记录的索引</span>
+<span class="token keyword">let</span> index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//循环加载数据</span>
+<span class="token keyword">function</span> <span class="token function">loop</span><span class="token punctuation">(</span>curTotal<span class="token punctuation">,</span>curIndex<span class="token punctuation">)</span><span class="token punctuation">{</span>
+ <span class="token keyword">if</span><span class="token punctuation">(</span>curTotal<span class="token operator">&lt;=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+  <span class="token comment" spellcheck="true">//每页多少条</span>
+ <span class="token keyword">let</span> pageCount <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>curTotal<span class="token punctuation">,</span> once<span class="token punctuation">)</span>
+  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>pageCount<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token keyword">let</span> li <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'li'</span><span class="token punctuation">)</span>
+        li<span class="token punctuation">.</span>innerText <span class="token operator">=</span> curIndex <span class="token operator">+</span> i <span class="token operator">+</span> <span class="token string">':'</span> <span class="token operator">+</span> <span class="token operator">~</span><span class="token operator">~</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">*</span>total<span class="token punctuation">)</span>
+        ul<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+        <span class="token function">loop</span><span class="token punctuation">(</span>curTotal <span class="token operator">-</span> pageCount<span class="token punctuation">,</span>curIndex<span class="token operator">+</span>pageCount<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+ <span class="token function">loop</span><span class="token punctuation">(</span>total<span class="token punctuation">,</span>index<span class="token punctuation">)</span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -958,7 +985,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">996</span>&nbsp;字
+                class="white-color">2.8k</span>&nbsp;字
             
             
             
