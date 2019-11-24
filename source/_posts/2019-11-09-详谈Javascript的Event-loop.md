@@ -49,7 +49,7 @@ JS是单线程的，JS是通过事件队列（Event Loop）的方式来实现异
     + 负责页面渲染，脚本执行，事件处理等
     + 每个tab页就是一个渲染进程
 
-### 浏览器内核（渲染进程）
+### 浏览器内核（Render进程）
 该进程也同样是多线程的，包含了以下线程
 + GUI渲染线程
     + 负责渲染页面，布局和控制
@@ -112,6 +112,93 @@ console.log('world')
 - 执行栈中的代码执行完毕，就会读取事件队列中的事件
 - 事件队列中的回调事件，是由各自线程插入到事件队列中的
 - 如此循环
+
+### 宏任务，微任务（异步任务,宏任务可以有多个，微任务队列只有一个）
+
+### 什么是宏任务
+我们可以将每次执行栈执行的代码当作一个宏任务（包括每次从事件队列中获取一个事件回调并放到执行栈中执行),每个宏任务会从头到尾执行完毕，不会执行其他。
+浏览器为了能够使宏任务和DOM任务有序进行，会在一个宏任务执行结果后，在下一个宏任务执行前，GUI渲染线程开始工作，对页面进行渲染。
+
+> 主代码块，setTimeout,setInterval等，都属于宏任务
+
+**第一个例子**
+```javascript
+document.body.style = "background:black";
+document.body.style = "background:red";
+document.body.style = "background:blue";
+document.body.style = "background:grey"
+```
+我们可以将这段代码放到浏览器的控制台执行一下，可以看到效果:
+![](/images/event_loop.gif)
+
+我们会看到页面背景在瞬间变成灰色，以上代码属于一次宏任务，所以全部执行完才会触发页面渲染，渲染时GUI线程会将所有的UI改动优化合并，所以视觉效果上，只会看到页面变成灰色。
+
+**第二个例子**
+```javascript
+document.body.style="background:blue"
+setTimeout(function(){
+document.body.style ="background:black"
+},0)
+```
+![](/images/3.gif)
+我们可以看到页面先变成蓝色，再瞬间变成黑色，这是因为上面代码为两次宏任务，分别执行一次然后再触发渲染，所以两种颜色都会被渲染出来。
+
+### 什么是微任务
+我们知道宏任务结束后会执行渲染，然后执行下一个宏任务，而微任务可以理解为在当前宏任务执行后立即执行的任务。
+> Promise,process,nextTick，then()等属于微任务,在微任务中process.nextTick优先级高于Promise
+**第一个例子**
+```javascript
+document.body.style="background:blue"
+console.log(1)
+Promise.resolve().then(()=>{
+    console.log(2)
+    document.body.style = "background:black"
+});
+console.log(3)
+```
+![](/images/4.gif)
+页面的背景直接变成黑色，没有经过蓝色的阶段，是因为，我们在宏任务中将背景设置为蓝色，但在进行渲染前执行了微任务，在微任务中将背景变成黑色，然后才执行的渲染
+
+**第二个例子**
+```javascript
+setTimeout(()=>{
+    console.log(1)
+    Promise.resolve(3).then(data => console.log(data))
+},0)
+setTimeout(() => {
+    console.log(2)
+},0)
+```
+上面代码共有两个setTimeout，也就是说除主代码外，共有两个宏任务，其中第一个宏任务执行中，输出1，并且创建微任务队列，所以在下一个宏任务队列执行前，先执行微任务，在微任务执行中输出3，微任务执行后，执行下次宏任务，执行中输出2.
+
+**当异步任务进入栈执行时，微任务和宏任务并排进入执行队列时，先执行微任务**
+```javascript
+setTimeout(function(){
+       console.log(1)
+       Promise.resolve().then(function () {
+           console.log(2)
+       })
+   },0)
+    setTimeout(function () {
+        console.log(3)
+    },0)
+    Promise.resolve().then(function () {
+        console.log(4)
+    })
+    console.log(5)//5，4，1，2，3
+```
++ 第一轮循环
+    - 同样从全局任务入口，遇到宏任务setTimeout，交给异步处理模块，我们暂且记为setTimeout 1，由于等待时间为0，直接加入宏任务队列。
+    - 再次遇到宏任务setTimeout，交给异步处理模块，我们暂且记为setTimeout2,同样直接加入宏任务队列
+    - 遇到微任务then()，加入微任务队列。
+    - 直接打印日志5，所以先输出5
++ 第二轮循环
+    - 栈空后，先执行微任务队列，输出4
+    - 读取宏任务队列最靠前的任务setTimeout1
+    - 先直接执行打印语句，打印日志1，又遇到微任务then(),加入微任务队列，第二轮循环结束
++ 第三轮循环
+    - 先执行微任务队列中的then(),输出2
+    - 执行setTimeout2，输出3，执行完毕
 ----
 **此文章非原创，经总结他人博客内容，仅供自己学习前端，无商业用途。以下为博客参考来源：**
 1.云中桥的《从多线程来看Event Loop》<https://github.com/chenqf/frontEndBlog/issues/14>
