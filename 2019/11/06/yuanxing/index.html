@@ -5,10 +5,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="原型&amp;原型链, github,前端，vue，Javascript">
-    <meta name="description" content="原型与原型链
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { ">
+    <meta name="description" content="创建对象我们可以通过new的方式创建一个对象
+
+var obj = new Object();
+
+也可以通过对象字面量的形式创建一个简单的对象
+
+var obj = {}
+
+工厂模式工厂模式就是我们提供一个模子，然后通过这个模子复制我们需要">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -403,7 +408,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    58
+                    377
                 </div>
                 
 
@@ -426,7 +431,39 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="原型与原型链"><a href="#原型与原型链" class="headerlink" title="原型与原型链"></a>原型与原型链</h3><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=471385043&amp;auto=1&amp;height=66"></iframe><script>
+                <h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><p>我们可以通过new的方式创建一个对象</p>
+<blockquote>
+<p>var obj = new Object();</p>
+</blockquote>
+<p>也可以通过对象字面量的形式创建一个简单的对象</p>
+<blockquote>
+<p>var obj = {}</p>
+</blockquote>
+<h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h3><p>工厂模式就是我们提供一个模子，然后通过这个模子复制我们需要的对象。</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> createPerson <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">// 声明一个中间对象，该对象为工厂模式的模子</span>
+<span class="token keyword">var</span> o <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//依次添加我们需要的属性与方法</span>
+o<span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+o<span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+<span class="token keyword">return</span> o<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">//创建两个实例</span>
+<span class="token keyword">var</span> perTom <span class="token operator">=</span> <span class="token function">createPerson</span><span class="token punctuation">(</span><span class="token string">'Tom'</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> perJake <span class="token operator">=</span> <span class="token function">createPerson</span><span class="token punctuation">(</span><span class="token string">'jake'</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><p>在JavaScript中new关键字可以让一个函数变得与众不同。</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">demo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+ console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span>
+ <span class="token function">demo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//window</span>
+ <span class="token keyword">new</span> <span class="token class-name">demo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//demo</span></code></pre>
+<p>使用new之后，函数内部发生了一些变化，让this指向改变。那么new关键字到底做了什么？</p>
+<blockquote>
+<p>使用new来调用函数，或者说发生构造函数调用时，会自动执行下面的操作。<br>1．创建（或者说构造）一个全新的对象。<br>2．这个新对象会被执行[[Prototype]]连接。<br>3．这个新对象会绑定到函数调用的this。<br>4．如果函数没有返回其他对象，那么new表达式中的函数调用会自动返回这个新对象。</p>
+</blockquote>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -928,7 +965,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.8k</span>&nbsp;字
+                class="white-color">10.6k</span>&nbsp;字
             
             
             
