@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>vue.js的精髓--组件</title>
+      <link href="/2020/02/27/vue-js-de-jing-sui-zu-jian/"/>
+      <url>/2020/02/27/vue-js-de-jing-sui-zu-jian/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="组件的分类"><a href="#组件的分类" class="headerlink" title="组件的分类"></a>组件的分类</h3><ol><li>由 vue-router 产生的每个页面，本质上也是组件。这类组件相对是最好写的，因为主要是还原设计稿，完成需求，不需要太多模块和架构设计上的考虑。</li><li>不包含业务，独立，具体功能的基础组件，比如日期选择器，模态框等。</li><li>业务组件，它与独立组件的区别是，业务组件只在当前项目中会用到，不具有通用性，而且会包含一些业务，比如数据请求；而独立组件不含业务，在任何项目中都可以使用，功能单一，比如一个具有数据校验功能的输入框。</li></ol><h3 id="组件的构成"><a href="#组件的构成" class="headerlink" title="组件的构成"></a>组件的构成</h3><blockquote><p>一个再复杂的组件，都是由三部分组成的：prop、event、slot，它们构成了Vue.js 组件的 API。如果你开发的是一个通用组件，那一定要事先设计好这三部分。</p></blockquote><h4 id="属性prop"><a href="#属性prop" class="headerlink" title="属性prop"></a>属性prop</h4><blockquote><p>写通用组件时，props 最好用<strong>对象</strong>的写法，这样可以针对每个属性设置类型、默认值或自定义校验属性的值，这点在组件开发中很重要，然而很多人却忽视，直接使用 props 的数组用法，这样的组件往往是不严谨的。</p></blockquote><h4 id="插槽slot"><a href="#插槽slot" class="headerlink" title="插槽slot"></a>插槽slot</h4><h4 id="自定义事件event"><a href="#自定义事件event" class="headerlink" title="自定义事件event"></a>自定义事件event</h4><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 组件 </tag>
+            
+            <tag> Vue.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>如何用Three.js和Echarts绘制世界地图</title>
       <link href="/2019/12/24/ru-he-yong-three.js-he-echarts-hui-zhi-shi-jie-di-tu/"/>
       <url>/2019/12/24/ru-he-yong-three.js-he-echarts-hui-zhi-shi-jie-di-tu/</url>

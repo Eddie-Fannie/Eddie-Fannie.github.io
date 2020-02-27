@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://eddie-fannie.github.io/"/>
-  <updated>2019-12-31T02:32:20.212Z</updated>
+  <updated>2020-02-26T09:28:20.900Z</updated>
   <id>https://eddie-fannie.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue.js的精髓--组件</title>
+    <link href="https://eddie-fannie.github.io/2020/02/27/vue-js-de-jing-sui-zu-jian/"/>
+    <id>https://eddie-fannie.github.io/2020/02/27/vue-js-de-jing-sui-zu-jian/</id>
+    <published>2020-02-26T16:00:03.000Z</published>
+    <updated>2020-02-26T09:28:20.900Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Vue" scheme="https://eddie-fannie.github.io/categories/Vue/"/>
+    
+    
+      <category term="组件" scheme="https://eddie-fannie.github.io/tags/%E7%BB%84%E4%BB%B6/"/>
+    
+      <category term="Vue.js" scheme="https://eddie-fannie.github.io/tags/Vue-js/"/>
+    
+  </entry>
   
   <entry>
     <title>如何用Three.js和Echarts绘制世界地图</title>
