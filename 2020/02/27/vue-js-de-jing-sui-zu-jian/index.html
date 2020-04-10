@@ -399,14 +399,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    387
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 				
@@ -433,7 +433,74 @@
 <h4 id="属性prop"><a href="#属性prop" class="headerlink" title="属性prop"></a>属性prop</h4><blockquote>
 <p>写通用组件时，props 最好用<strong>对象</strong>的写法，这样可以针对每个属性设置类型、默认值或自定义校验属性的值，这点在组件开发中很重要，然而很多人却忽视，直接使用 props 的数组用法，这样的组件往往是不严谨的。</p>
 </blockquote>
-<h4 id="插槽slot"><a href="#插槽slot" class="headerlink" title="插槽slot"></a>插槽slot</h4><h4 id="自定义事件event"><a href="#自定义事件event" class="headerlink" title="自定义事件event"></a>自定义事件event</h4><script>
+<h4 id="插槽slot"><a href="#插槽slot" class="headerlink" title="插槽slot"></a>插槽slot</h4><h4 id="自定义事件event"><a href="#自定义事件event" class="headerlink" title="自定义事件event"></a>自定义事件event</h4><h3 id="组件的通信"><a href="#组件的通信" class="headerlink" title="组件的通信"></a>组件的通信</h3><p>Vue.js内置的通信手段一般有两种：</p>
+<ol>
+<li>ref: 给元素或组件注册引用信息</li>
+<li>$parent / $children: 访问父/子实例<br>这两种通信手段都无法实现跨级通信，以往会借助Vuex或Bus这样都解决方案，不得不引入第三方库来支持。下面介绍一种无依赖都组件通信方法：Vue.js内置都provide/inject接口。</li>
+</ol>
+<blockquote>
+<p>这对选项需要一起使用，以允许一个祖先组件向其所有子孙后代注入一个依赖，不论组件层次有多深，并在起上下游关系成立都时间里始终生效。</p>
+</blockquote>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// B是A的子组件</span>
+<span class="token comment" spellcheck="true">//A.vue</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span><span class="token punctuation">{</span>
+    provide<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        name<span class="token punctuation">:</span> <span class="token string">'Aresn'</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//B.vue</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span><span class="token punctuation">{</span>
+    inject<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    mounted <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token comment" spellcheck="true">//Aresn</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<blockquote>
+<ul>
+<li>在 A.vue 里，我们设置了一个 <strong>provide: name</strong>，值为 Aresn，它的作用就是将 <strong>name</strong> 这个变量提供给它的所有子组件。而在 B.vue 中，通过 <code>inject</code> 注入了从 A 组件中提供的 <strong>name</strong> 变量，那么在组件 B 中，就可以直接通过 <strong>this.name</strong> 访问这个变量了，它的值也是 Aresn。这就是 provide / inject API 最核心的用法。</li>
+<li>provide 和 inject 绑定并<strong>不是可响应</strong>的。这是刻意为之的。然而，如果你传入了一个可监听的对象，那么其对象的属性还是可响应的。所以，上面 A.vue 的 name 如果改变了，B.vue 的 this.name 是不会改变的，仍然是 Aresn。</li>
+</ul>
+</blockquote>
+<h4 id="利用provide-amp-inject替代Vuex"><a href="#利用provide-amp-inject替代Vuex" class="headerlink" title="利用provide&amp;inject替代Vuex"></a>利用provide&amp;inject替代Vuex</h4><p>使用 Vuex，最主要的目的是跨组件通信、全局数据维护、多人协同开发。需求比如有：用户的登录信息维护、通知信息维护等全局的状态和数据。</p>
+<p>一般在 webpack 中使用 Vue.js，都会有一个入口文件 <strong>main.js</strong>，里面通常导入了 Vue、VueRouter、iView 等库，通常也会导入一个入口组件 <code>app.vue</code> 作为根组件。一个简单的 app.vue 可能只有以下代码：</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+ <span class="token operator">&lt;</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>router<span class="token operator">-</span>view<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>view<span class="token operator">></span>
+ <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+  <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+
+  <span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>    </code></pre>
+<blockquote>
+<p>使用provide/inject替代vuex，就是在app.vue上做文章。因为你的项目中所有的组件（包含路由），它的父组件（或根组件）都是 app.vue，所以我们<strong>把整个 app.vue 实例通过 <code>provide</code> 对外提供</strong>。</p>
+</blockquote>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+ <span class="token operator">&lt;</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>router<span class="token operator">-</span>view<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>view<span class="token operator">></span>
+ <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+  <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+      <span class="token function">provide</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token punctuation">{</span>
+              app<span class="token punctuation">:</span> <span class="token keyword">this</span>
+          <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>    </code></pre>
+<blockquote>
+<p>上面代码中我们把app.vue实例this对外提供，命名为app，使用这个名字后子组件不能再使用它作为局部属性。接下来任何组件（或路由）只要通过 <code>inject</code> 注入 app.vue 的 app 的话，都可以直接通过 <strong>this.app.xxx</strong> 来访问 app.vue 的 <code>data</code>、<code>computed</code>、<code>methods</code> 等内容。</p>
+</blockquote>
+<h3 id="自行实现父子组件间通信的方法dispatch-和-broadcast"><a href="#自行实现父子组件间通信的方法dispatch-和-broadcast" class="headerlink" title="自行实现父子组件间通信的方法dispatch 和 broadcast"></a>自行实现父子组件间通信的方法dispatch 和 broadcast</h3><blockquote>
+<p>provide / inject API 主要解决了跨级组件间的通信问题，不过它的使用场景，主要是子组件获取上级组件的状态，跨级组件间建立了一种主动提供与依赖注入的关系。然后有两种场景它不能很好的解决：</p>
+<ul>
+<li>父组件向子组件（支持跨级）传递数据；</li>
+<li>子组件向父组件（支持跨级）传递数据。</li>
+</ul>
+</blockquote>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -937,7 +1004,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">10.9k</span>&nbsp;字
+                class="white-color">11.8k</span>&nbsp;字
             
             
             
